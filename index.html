@@ -3,43 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music Stream</title>
+    <title>MusicStream</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Barra lateral -->
+    <!-- Sidebar -->
     <div class="sidebar">
-        <h1>Music Stream</h1>
-        <div class="sidebar-playlists">
-            <h2 class="sidebar-title">Suas Playlists</h2>
+        <h1>MusicStream</h1>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Início</a></li>
+                <li><a href="#" onclick="mostrarTodasMusicas()">Todas as Músicas</a></li>
+                <li><a href="#" onclick="filtrarPorCategoria('Louvor')">Louvores</a></li>
+            </ul>
+        </nav>
+        <div class="playlists-section">
+            <h2>Suas Playlists</h2>
             <div id="playlist-list">
-                <!-- Lista de playlists será inserida aqui -->
+                <!-- Playlists serão inseridas aqui -->
             </div>
-            <button class="create-playlist-btn" onclick="showCreatePlaylistModal()">+ Criar Playlist</button>
+            <button class="create-playlist-btn" onclick="showCreatePlaylistModal()">
+                + Criar Playlist
+            </button>
         </div>
     </div>
 
-    <!-- Conteúdo principal -->
-    <main>
-        <header>
-            <div class="search-container">
-                <input type="text" class="search-input" placeholder="Buscar músicas..." oninput="searchMusic(this.value)">
-            </div>
-        </header>
-        <div id="lista-de-musicas" class="playlist-container">
+    <!-- Conteúdo Principal -->
+    <main class="main-content">
+        <div class="search-bar">
+            <input type="text" 
+                   id="search-input" 
+                   placeholder="Buscar músicas, artistas ou categorias..."
+                   oninput="searchMusic(this.value)">
+        </div>
+
+        <div id="content-title">
+            <h2>Todas as Músicas</h2>
+        </div>
+
+        <div id="lista-de-musicas" class="music-grid">
             <!-- Músicas serão inseridas aqui -->
         </div>
     </main>
 
-    <!-- Modal de criar playlist -->
+    <!-- Modal de Criar Playlist -->
     <div id="create-playlist-modal" class="modal">
         <div class="modal-content">
-            <h2 class="modal-title">Criar Nova Playlist</h2>
-            <input type="text" id="playlist-name" class="modal-input" placeholder="Nome da playlist">
+            <h2>Criar Nova Playlist</h2>
+            <input type="text" 
+                   id="playlist-name" 
+                   placeholder="Nome da playlist">
             <div class="modal-buttons">
-                <button class="modal-btn modal-btn-secondary" onclick="hideCreatePlaylistModal()">Cancelar</button>
-                <button class="modal-btn modal-btn-primary" onclick="createPlaylist()">Criar</button>
+                <button onclick="hideCreatePlaylistModal()" class="btn-secondary">Cancelar</button>
+                <button onclick="createPlaylist()" class="btn-primary">Criar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Adicionar à Playlist -->
+    <div id="add-to-playlist-modal" class="modal">
+        <div class="modal-content">
+            <h2>Adicionar à Playlist</h2>
+            <div id="playlist-options">
+                <!-- Opções de playlist serão inseridas aqui -->
+            </div>
+            <div class="modal-buttons">
+                <button onclick="hideAddToPlaylistModal()" class="btn-secondary">Cancelar</button>
             </div>
         </div>
     </div>
