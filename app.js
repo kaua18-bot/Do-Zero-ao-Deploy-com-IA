@@ -107,15 +107,40 @@ function mostrarTodasMusicas() {
 // Funções de controle de áudio
 function tocarMusica(id) {
     const musica = musicas.find(m => m.id === id);
+    if (!musica) {
+        console.error('Música não encontrada');
+        return;
+    }
+
     let audio = document.querySelector(`audio[data-id="${id}"]`);
     
     if (!audio) {
         audio = new Audio();
         audio.crossOrigin = "anonymous";
         audio.preload = "auto";
-        audio.src = musica.audioUrl;
         audio.dataset.id = id;
+        
+        // Evento para tratamento de erros durante o carregamento
+        audio.addEventListener('error', (e) => {
+            console.error('Erro ao carregar áudio:', e);
+            alert('Erro ao carregar o áudio. Tentando novamente...');
+            // Tenta carregar novamente após um breve delay
+            setTimeout(() => {
+                audio.src = musica.audioUrl + '?t=' + new Date().getTime();
+            }, 1000);
+        });
+
+        // Evento para quando o áudio estiver pronto
+        audio.addEventListener('canplaythrough', () => {
+            console.log('Áudio pronto para reprodução');
+        });
+
         document.body.appendChild(audio);
+    }
+
+    // Define/redefine a fonte do áudio
+    if (!audio.src || audio.error) {
+        audio.src = musica.audioUrl;
     }
     
     if (audioAtual && audioAtual !== audio) {
@@ -124,21 +149,30 @@ function tocarMusica(id) {
     }
     
     if (audio.paused) {
-        const playPromise = audio.play();
-        if (playPromise !== undefined) {
-            playPromise.then(() => {
+        // Tenta reproduzir com retry
+        const tentarTocar = async (tentativas = 3) => {
+            try {
+                await audio.play();
                 audioAtual = audio;
-            }).catch(error => {
+                console.log('Reprodução iniciada com sucesso');
+            } catch (error) {
                 console.error('Erro ao tocar áudio:', error);
-                if (error.name === 'NotAllowedError') {
-                    alert('Por favor, permita a reprodução de áudio nesta página.');
-                } else if (error.name === 'NotSupportedError') {
-                    alert('O formato de áudio não é suportado pelo seu navegador.');
+                if (tentativas > 0) {
+                    console.log(`Tentando novamente... (${tentativas} tentativas restantes)`);
+                    setTimeout(() => tentarTocar(tentativas - 1), 1000);
                 } else {
-                    alert('Erro ao reproduzir o áudio. Por favor, tente novamente.');
+                    if (error.name === 'NotAllowedError') {
+                        alert('Por favor, permita a reprodução de áudio nesta página.');
+                    } else if (error.name === 'NotSupportedError') {
+                        alert('O formato de áudio não é suportado pelo seu navegador.');
+                    } else {
+                        alert('Erro ao reproduzir o áudio. Por favor, recarregue a página e tente novamente.');
+                    }
                 }
-            });
-        }
+            }
+        };
+
+        tentarTocar();
     } else {
         audio.pause();
     }
