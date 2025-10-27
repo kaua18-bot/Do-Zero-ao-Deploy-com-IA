@@ -7,67 +7,67 @@ let playlists = [
 const musicas = [
     {
         id: 1,
-        titulo: "Piano Melody",
-        artista: "Piano Artist",
-        categoria: "Piano",
+        titulo: "Amazing Grace",
+        artista: "Chris Tomlin",
+        categoria: "Louvor",
         capaUrl: "https://images.pexels.com/photos/415687/pexels-photo-415687.jpeg?auto=compress&cs=tinysrgb&w=400",
-        audioUrl: "https://drive.google.com/uc?export=download&id=1mq_EUnI5JL_FXoN0ZePgR-GgWsrYe2SB"
+        audioUrl: "https://actions.google.com/sounds/v1/alarms/digital_watch_alarm_long.ogg"
     },
     {
         id: 2,
-        titulo: "Guitar Solo",
-        artista: "Guitar Master",
-        categoria: "Guitar",
+        titulo: "How Great Is Our God",
+        artista: "Chris Tomlin",
+        categoria: "Louvor",
         capaUrl: "https://images.pexels.com/photos/2422497/pexels-photo-2422497.jpeg?auto=compress&cs=tinysrgb&w=400",
-        audioUrl: "https://drive.google.com/uc?export=download&id=1wPe45Ln7jItsGV_ARjyEHsb12UtgN-gO"
+        audioUrl: "https://actions.google.com/sounds/v1/alarms/beep_short.ogg"
     },
     {
         id: 3,
-        titulo: "Smooth Jazz",
-        artista: "Jazz Band",
-        categoria: "Jazz",
+        titulo: "Oceans",
+        artista: "Hillsong UNITED",
+        categoria: "Louvor",
         capaUrl: "https://images.pexels.com/photos/1295138/pexels-photo-1295138.jpeg?auto=compress&cs=tinysrgb&w=400",
-        audioUrl: "https://drive.google.com/uc?export=download&id=1QZJtYLBIYrpOGG7p4k_EvQyvXYA2L0Uy"
+        audioUrl: "https://actions.google.com/sounds/v1/alarms/mechanical_clock_ring.ogg"
     },
     {
         id: 4,
-        titulo: "Electronic Beat",
-        artista: "DJ Mix",
-        categoria: "Electronic",
+        titulo: "What A Beautiful Name",
+        artista: "Hillsong Worship",
+        categoria: "Louvor",
         capaUrl: "https://images.pexels.com/photos/1761279/pexels-photo-1761279.jpeg?auto=compress&cs=tinysrgb&w=400",
-        audioUrl: "https://drive.google.com/uc?export=download&id=1HVJrGUPiHeMDfA6spUNK4HHM3zOaCDN4"
+        audioUrl: "https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg"
     },
     {
         id: 5,
-        titulo: "Acoustic Session",
-        artista: "Acoustic Band",
-        categoria: "Acoustic",
+        titulo: "Way Maker",
+        artista: "Sinach",
+        categoria: "Louvor",
         capaUrl: "https://images.pexels.com/photos/33041/antelope-canyon-lower-canyon-arizona.jpg?auto=compress&cs=tinysrgb&w=400",
-        audioUrl: "https://drive.google.com/uc?export=download&id=1puLj89Td6tZXn4HaHeBXQI1zRLDZw9X_"
+        audioUrl: "https://actions.google.com/sounds/v1/cartoon/cartoon_boing.ogg"
     },
     {
         id: 6,
-        titulo: "Rock Anthem",
-        artista: "Rock Band",
+        titulo: "Bohemian Rhapsody",
+        artista: "Queen",
         categoria: "Rock",
         capaUrl: "https://images.pexels.com/photos/167491/pexels-photo-167491.jpeg?auto=compress&cs=tinysrgb&w=400",
-        audioUrl: "https://drive.google.com/uc?export=download&id=1Sh-bRGhZbvl7_CMQyDNlBwY-kMF_dh-_"
+        audioUrl: "https://actions.google.com/sounds/v1/cartoon/cartoon_cowbell.ogg"
     },
     {
         id: 7,
-        titulo: "Pop Hit",
-        artista: "Pop Star",
+        titulo: "Shape of You",
+        artista: "Ed Sheeran",
         categoria: "Pop",
         capaUrl: "https://images.pexels.com/photos/1644616/pexels-photo-1644616.jpeg?auto=compress&cs=tinysrgb&w=400",
-        audioUrl: "https://drive.google.com/uc?export=download&id=1g4B3FIi3b_yx_BEOp_yJ5AKfeBqBjuRy"
+        audioUrl: "https://actions.google.com/sounds/v1/cartoon/slide_whistle_1.ogg"
     },
     {
         id: 8,
-        titulo: "Classical Symphony",
-        artista: "Orchestra",
-        categoria: "Classical",
+        titulo: "10,000 Reasons",
+        artista: "Matt Redman",
+        categoria: "Louvor",
         capaUrl: "https://images.pexels.com/photos/1834407/pexels-photo-1834407.jpeg?auto=compress&cs=tinysrgb&w=400",
-        audioUrl: "https://drive.google.com/uc?export=download&id=1b_iLVhRR9K-R2bYaxWmqBnw6_W5aqRbO"
+        audioUrl: "https://actions.google.com/sounds/v1/cartoon/tympani_bing.ogg"
     }
 ];
 
@@ -107,91 +107,29 @@ function mostrarTodasMusicas() {
 // Funções de controle de áudio
 function tocarMusica(id) {
     const musica = musicas.find(m => m.id === id);
-    if (!musica) {
-        console.error('Música não encontrada');
-        return;
-    }
-
     let audio = document.querySelector(`audio[data-id="${id}"]`);
-    const playButton = document.querySelector(`button.play-button[data-id="${id}"]`);
     
-    const atualizarBotao = (playing) => {
-        if (playButton) {
-            playButton.innerHTML = playing ? '⏸' : '▶';
-        }
-    };
-
     if (!audio) {
         audio = new Audio();
-        audio.crossOrigin = "anonymous";
-        audio.preload = "auto";
-        audio.dataset.id = id;
-        
-        audio.addEventListener('play', () => {
-            atualizarBotao(true);
-            console.log('Reprodução iniciada');
-        });
-
-        audio.addEventListener('pause', () => {
-            atualizarBotao(false);
-            console.log('Reprodução pausada');
-        });
-
-        audio.addEventListener('ended', () => {
-            atualizarBotao(false);
-            console.log('Reprodução finalizada');
-        });
-
-        audio.addEventListener('error', (e) => {
-            console.error('Erro no áudio:', e);
-            atualizarBotao(false);
-            alert('Erro ao carregar áudio. Tentando novamente...');
-            
-            // Tenta carregar com URL alternativo
-            setTimeout(() => {
-                const backupUrl = musica.audioUrl.replace('uc?export=download', 'open?id');
-                console.log('Tentando URL alternativo:', backupUrl);
-                audio.src = backupUrl;
-            }, 1000);
-        });
-
-        document.body.appendChild(audio);
-    }
-
-    if (!audio.src || audio.error) {
         audio.src = musica.audioUrl;
+        audio.dataset.id = id;
+        document.body.appendChild(audio);
     }
     
     if (audioAtual && audioAtual !== audio) {
-        const oldPlayButton = document.querySelector(`button.play-button[data-id="${audioAtual.dataset.id}"]`);
-        if (oldPlayButton) {
-            oldPlayButton.innerHTML = '▶';
-        }
         audioAtual.pause();
         audioAtual.currentTime = 0;
     }
     
     if (audio.paused) {
-        const tentarTocar = async (tentativas = 3) => {
-            try {
-                await audio.play();
-                audioAtual = audio;
-            } catch (error) {
-                console.error('Erro ao tocar:', error);
-                if (tentativas > 0) {
-                    console.log(`Tentativa ${4-tentativas}/3...`);
-                    setTimeout(() => tentarTocar(tentativas - 1), 1000);
-                } else {
-                    alert('Não foi possível reproduzir o áudio. Tente novamente em alguns segundos.');
-                    atualizarBotao(false);
-                }
-            }
-        };
-        tentarTocar();
+        audio.play().catch(error => {
+            console.error('Erro ao tocar áudio:', error);
+            alert('Não foi possível reproduzir o áudio. Por favor, tente novamente.');
+        });
+        audioAtual = audio;
     } else {
         audio.pause();
     }
-}
 }
 
 function pararMusica(id) {
@@ -310,7 +248,7 @@ function renderizarMusicas() {
                 <div class="music-category">${musica.categoria}</div>
             </div>
             <div class="controls">
-                <button class="play-button" data-id="${musica.id}" onclick="tocarMusica(${musica.id})">▶</button>
+                <button class="play-button" onclick="tocarMusica(${musica.id})">▶</button>
                 <button class="stop-button" onclick="pararMusica(${musica.id})">⏹</button>
                 <button class="add-to-playlist" onclick="showAddToPlaylistModal(${musica.id})">+</button>
             </div>
