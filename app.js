@@ -11,7 +11,7 @@ const musicas = [
         artista: "Chris Tomlin",
         categoria: "Louvor",
         capaUrl: "https://images.pexels.com/photos/415687/pexels-photo-415687.jpeg?auto=compress&cs=tinysrgb&w=400",
-        audioUrl: "https://cdn.pixabay.com/download/audio/2022/11/22/audio_febc508520.mp3"
+        audioUrl: "https://raw.githubusercontent.com/kaua18-bot/Do-Zero-ao-Deploy-com-IA/desenvolvimento/audio/song1.mp3"
     },
     {
         id: 2,
@@ -19,7 +19,7 @@ const musicas = [
         artista: "Chris Tomlin",
         categoria: "Louvor",
         capaUrl: "https://images.pexels.com/photos/2422497/pexels-photo-2422497.jpeg?auto=compress&cs=tinysrgb&w=400",
-        audioUrl: "https://cdn.pixabay.com/download/audio/2022/10/25/audio_f8424536da.mp3"
+        audioUrl: "https://raw.githubusercontent.com/kaua18-bot/Do-Zero-ao-Deploy-com-IA/desenvolvimento/audio/song2.mp3"
     },
     {
         id: 3,
@@ -27,7 +27,7 @@ const musicas = [
         artista: "Hillsong UNITED",
         categoria: "Louvor",
         capaUrl: "https://images.pexels.com/photos/1295138/pexels-photo-1295138.jpeg?auto=compress&cs=tinysrgb&w=400",
-        audioUrl: "https://cdn.pixabay.com/download/audio/2022/11/17/audio_5d05e8d45b.mp3"
+        audioUrl: "https://raw.githubusercontent.com/kaua18-bot/Do-Zero-ao-Deploy-com-IA/desenvolvimento/audio/song3.mp3"
     },
     {
         id: 4,
@@ -35,7 +35,7 @@ const musicas = [
         artista: "Hillsong Worship",
         categoria: "Louvor",
         capaUrl: "https://images.pexels.com/photos/1761279/pexels-photo-1761279.jpeg?auto=compress&cs=tinysrgb&w=400",
-        audioUrl: "https://cdn.pixabay.com/download/audio/2022/11/17/audio_00990f0b97.mp3"
+        audioUrl: "https://raw.githubusercontent.com/kaua18-bot/Do-Zero-ao-Deploy-com-IA/desenvolvimento/audio/song4.mp3"
     },
     {
         id: 5,
@@ -43,7 +43,7 @@ const musicas = [
         artista: "Sinach",
         categoria: "Louvor",
         capaUrl: "https://images.pexels.com/photos/33041/antelope-canyon-lower-canyon-arizona.jpg?auto=compress&cs=tinysrgb&w=400",
-        audioUrl: "https://cdn.pixabay.com/download/audio/2022/11/17/audio_c9a4a1d834.mp3"
+        audioUrl: "https://raw.githubusercontent.com/kaua18-bot/Do-Zero-ao-Deploy-com-IA/desenvolvimento/audio/song5.mp3"
     },
     {
         id: 6,
@@ -51,7 +51,7 @@ const musicas = [
         artista: "Queen",
         categoria: "Rock",
         capaUrl: "https://images.pexels.com/photos/167491/pexels-photo-167491.jpeg?auto=compress&cs=tinysrgb&w=400",
-        audioUrl: "https://cdn.pixabay.com/download/audio/2022/11/15/audio_e2ea4223c6.mp3"
+        audioUrl: "https://raw.githubusercontent.com/kaua18-bot/Do-Zero-ao-Deploy-com-IA/desenvolvimento/audio/song6.mp3"
     },
     {
         id: 7,
@@ -59,7 +59,7 @@ const musicas = [
         artista: "Ed Sheeran",
         categoria: "Pop",
         capaUrl: "https://images.pexels.com/photos/1644616/pexels-photo-1644616.jpeg?auto=compress&cs=tinysrgb&w=400",
-        audioUrl: "https://cdn.pixabay.com/download/audio/2022/11/15/audio_038fa021ea.mp3"
+        audioUrl: "https://raw.githubusercontent.com/kaua18-bot/Do-Zero-ao-Deploy-com-IA/desenvolvimento/audio/song7.mp3"
     },
     {
         id: 8,
@@ -67,7 +67,7 @@ const musicas = [
         artista: "Matt Redman",
         categoria: "Louvor",
         capaUrl: "https://images.pexels.com/photos/1834407/pexels-photo-1834407.jpeg?auto=compress&cs=tinysrgb&w=400",
-        audioUrl: "https://cdn.pixabay.com/download/audio/2022/11/17/audio_d0c2f68006.mp3"
+        audioUrl: "https://raw.githubusercontent.com/kaua18-bot/Do-Zero-ao-Deploy-com-IA/desenvolvimento/audio/song8.mp3"
     }
 ];
 
