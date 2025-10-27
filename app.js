@@ -1,4 +1,9 @@
-// Banco de dados falso de músicas
+// Banco de dados de playlists
+let playlists = [
+    { id: 1, name: 'Favoritas', musicas: [] }
+];
+
+// Banco de dados de músicas
 const musicas = [
     {
         titulo: "Bohemian Rhapsody",

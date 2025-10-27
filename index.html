@@ -3,21 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CyberBeats - Music Player</title>
+    <title>Music Stream</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>CYBER<span class="neon-text">BEATS</span></h1>
-        <div class="header-line"></div>
-    </header>
+    <!-- Barra lateral -->
+    <div class="sidebar">
+        <h1>Music Stream</h1>
+        <div class="sidebar-playlists">
+            <h2 class="sidebar-title">Suas Playlists</h2>
+            <div id="playlist-list">
+                <!-- Lista de playlists será inserida aqui -->
+            </div>
+            <button class="create-playlist-btn" onclick="showCreatePlaylistModal()">+ Criar Playlist</button>
+        </div>
+    </div>
+
+    <!-- Conteúdo principal -->
     <main>
-        <div class="container">
-            <!-- Container para a lista de músicas -->
-            <div id="lista-de-musicas" class="playlist-container"></div>
+        <header>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Buscar músicas..." oninput="searchMusic(this.value)">
+            </div>
+        </header>
+        <div id="lista-de-musicas" class="playlist-container">
+            <!-- Músicas serão inseridas aqui -->
         </div>
     </main>
+
+    <!-- Modal de criar playlist -->
+    <div id="create-playlist-modal" class="modal">
+        <div class="modal-content">
+            <h2 class="modal-title">Criar Nova Playlist</h2>
+            <input type="text" id="playlist-name" class="modal-input" placeholder="Nome da playlist">
+            <div class="modal-buttons">
+                <button class="modal-btn modal-btn-secondary" onclick="hideCreatePlaylistModal()">Cancelar</button>
+                <button class="modal-btn modal-btn-primary" onclick="createPlaylist()">Criar</button>
+            </div>
+        </div>
+    </div>
+
     <script src="app.js"></script>
 </body>
 </html>
