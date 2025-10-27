@@ -60,3 +60,27 @@ main {
     font-size: 14px;
     color: #b3b3b3;
 }
+
+.controles {
+    display: flex;
+    gap: 10px;
+    margin-left: auto;
+    padding-left: 20px;
+}
+
+.play-button,
+.stop-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    transition: transform 0.2s;
+}
+
+.play-button:hover,
+.stop-button:hover {
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.1);
+}
