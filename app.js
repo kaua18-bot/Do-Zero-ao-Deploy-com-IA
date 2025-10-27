@@ -10,7 +10,7 @@ const musicas = [
         titulo: "Amazing Grace",
         artista: "Chris Tomlin",
         categoria: "Louvor",
-        capaUrl: "https://i.imgur.com/1S4LpH0.jpg",
+        capaUrl: "https://images.pexels.com/photos/415687/pexels-photo-415687.jpeg?auto=compress&cs=tinysrgb&w=400",
         audioUrl: "https://actions.google.com/sounds/v1/alarms/digital_watch_alarm_long.ogg"
     },
     {
@@ -18,7 +18,7 @@ const musicas = [
         titulo: "How Great Is Our God",
         artista: "Chris Tomlin",
         categoria: "Louvor",
-        capaUrl: "https://i.imgur.com/2S4LpH0.jpg",
+        capaUrl: "https://images.pexels.com/photos/2422497/pexels-photo-2422497.jpeg?auto=compress&cs=tinysrgb&w=400",
         audioUrl: "https://actions.google.com/sounds/v1/alarms/beep_short.ogg"
     },
     {
@@ -26,7 +26,7 @@ const musicas = [
         titulo: "Oceans",
         artista: "Hillsong UNITED",
         categoria: "Louvor",
-        capaUrl: "https://i.imgur.com/3S4LpH0.jpg",
+        capaUrl: "https://images.pexels.com/photos/1295138/pexels-photo-1295138.jpeg?auto=compress&cs=tinysrgb&w=400",
         audioUrl: "https://actions.google.com/sounds/v1/alarms/mechanical_clock_ring.ogg"
     },
     {
@@ -34,7 +34,7 @@ const musicas = [
         titulo: "What A Beautiful Name",
         artista: "Hillsong Worship",
         categoria: "Louvor",
-        capaUrl: "https://i.imgur.com/4S4LpH0.jpg",
+        capaUrl: "https://images.pexels.com/photos/1761279/pexels-photo-1761279.jpeg?auto=compress&cs=tinysrgb&w=400",
         audioUrl: "https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg"
     },
     {
@@ -42,7 +42,7 @@ const musicas = [
         titulo: "Way Maker",
         artista: "Sinach",
         categoria: "Louvor",
-        capaUrl: "https://i.imgur.com/5S4LpH0.jpg",
+        capaUrl: "https://images.pexels.com/photos/33041/antelope-canyon-lower-canyon-arizona.jpg?auto=compress&cs=tinysrgb&w=400",
         audioUrl: "https://actions.google.com/sounds/v1/cartoon/cartoon_boing.ogg"
     },
     {
@@ -50,7 +50,7 @@ const musicas = [
         titulo: "Bohemian Rhapsody",
         artista: "Queen",
         categoria: "Rock",
-        capaUrl: "https://i.imgur.com/6S4LpH0.jpg",
+        capaUrl: "https://images.pexels.com/photos/167491/pexels-photo-167491.jpeg?auto=compress&cs=tinysrgb&w=400",
         audioUrl: "https://actions.google.com/sounds/v1/cartoon/cartoon_cowbell.ogg"
     },
     {
@@ -58,7 +58,7 @@ const musicas = [
         titulo: "Shape of You",
         artista: "Ed Sheeran",
         categoria: "Pop",
-        capaUrl: "https://i.imgur.com/7S4LpH0.jpg",
+        capaUrl: "https://images.pexels.com/photos/1644616/pexels-photo-1644616.jpeg?auto=compress&cs=tinysrgb&w=400",
         audioUrl: "https://actions.google.com/sounds/v1/cartoon/slide_whistle_1.ogg"
     },
     {
@@ -66,7 +66,7 @@ const musicas = [
         titulo: "10,000 Reasons",
         artista: "Matt Redman",
         categoria: "Louvor",
-        capaUrl: "https://i.imgur.com/8S4LpH0.jpg",
+        capaUrl: "https://images.pexels.com/photos/1834407/pexels-photo-1834407.jpeg?auto=compress&cs=tinysrgb&w=400",
         audioUrl: "https://actions.google.com/sounds/v1/cartoon/tympani_bing.ogg"
     }
 ];
