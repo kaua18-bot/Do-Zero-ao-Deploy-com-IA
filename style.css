@@ -1,0 +1,62 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: white;
+}
+
+header {
+    background-color: #282828;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+/* Estilo do card de música similar ao Spotify */
+.musica-card {
+    /* Flexbox para organizar os elementos do card */
+    display: flex;
+    align-items: center;
+    background-color: #282828;
+    padding: 16px;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+/* Efeito hover para interatividade */
+.musica-card:hover {
+    background-color: #383838;
+    cursor: pointer;
+}
+
+.musica-card img {
+    width: 64px;
+    height: 64px;
+    border-radius: 4px;
+    margin-right: 16px;
+}
+
+.musica-info {
+    flex-grow: 1;
+}
+
+.musica-titulo {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.musica-artista {
+    font-size: 14px;
+    color: #b3b3b3;
+}
