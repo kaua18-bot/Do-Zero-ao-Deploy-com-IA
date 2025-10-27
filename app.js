@@ -10,64 +10,64 @@ const musicas = [
         titulo: "Amazing Grace",
         artista: "Chris Tomlin",
         categoria: "Louvor",
-        capaUrl: "https://i.scdn.co/image/ab67616d0000b273f0f7a5b0aa8234186d887225",
-        audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+        capaUrl: "https://m.media-amazon.com/images/I/71rrF6eqkUL._UF1000,1000_QL80_.jpg",
+        audioUrl: "https://dl.dropboxusercontent.com/scl/fi/xt6fjc0uch5h27ht3y2g7/amazing-grace.mp3?rlkey=v40wprb2xpbgvqktih6437hxw"
     },
     {
         id: 2,
         titulo: "How Great Is Our God",
         artista: "Chris Tomlin",
         categoria: "Louvor",
-        capaUrl: "https://i.scdn.co/image/ab67616d0000b2735274a9addb9186ff36a689d0",
-        audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"
+        capaUrl: "https://upload.wikimedia.org/wikipedia/en/8/86/Chris_Tomlin_-_How_Great_Is_Our_God.jpg",
+        audioUrl: "https://dl.dropboxusercontent.com/scl/fi/xpheqxx63bsv7mnmo8o73/how-great-is-our-god.mp3?rlkey=v40wprb2xpbgvqktih6437hxw"
     },
     {
         id: 3,
         titulo: "Oceans",
         artista: "Hillsong UNITED",
         categoria: "Louvor",
-        capaUrl: "https://i.scdn.co/image/ab67616d0000b273af3d8c4ea2c9b5d1681ae0e5",
-        audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"
+        capaUrl: "https://i.scdn.co/image/ab67616d00001e02af3d8c4ea2c9b5d1681ae0e5",
+        audioUrl: "https://dl.dropboxusercontent.com/scl/fi/d6byyo5ks4ugbwqca35jc/oceans.mp3?rlkey=v40wprb2xpbgvqktih6437hxw"
     },
     {
         id: 4,
         titulo: "What A Beautiful Name",
         artista: "Hillsong Worship",
         categoria: "Louvor",
-        capaUrl: "https://i.scdn.co/image/ab67616d0000b273449b39efcd85c01c32ae9551",
-        audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3"
+        capaUrl: "https://i.scdn.co/image/ab67616d00001e02449b39efcd85c01c32ae9551",
+        audioUrl: "https://dl.dropboxusercontent.com/scl/fi/hnqpvql2akw9kh7st8aef/what-a-beautiful-name.mp3?rlkey=v40wprb2xpbgvqktih6437hxw"
     },
     {
         id: 5,
         titulo: "Way Maker",
         artista: "Sinach",
         categoria: "Louvor",
-        capaUrl: "https://i.scdn.co/image/ab67616d0000b273b85f0817773ab0a5e832925c",
-        audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3"
+        capaUrl: "https://i1.sndcdn.com/artworks-000583616056-43q5fi-t500x500.jpg",
+        audioUrl: "https://dl.dropboxusercontent.com/scl/fi/aohnfwvbv947xiv49norp/way-maker.mp3?rlkey=v40wprb2xpbgvqktih6437hxw"
     },
     {
         id: 6,
         titulo: "Bohemian Rhapsody",
         artista: "Queen",
         categoria: "Rock",
-        capaUrl: "https://i.scdn.co/image/ab67616d0000b273d37ecb4982aa739b3714c984",
-        audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3"
+        capaUrl: "https://upload.wikimedia.org/wikipedia/en/9/9f/Bohemian_Rhapsody_soundtrack.jpg",
+        audioUrl: "https://dl.dropboxusercontent.com/scl/fi/88po1vlbkdf1p80f9nwj4/bohemian-rhapsody-sample.mp3?rlkey=v40wprb2xpbgvqktih6437hxw"
     },
     {
         id: 7,
         titulo: "Shape of You",
         artista: "Ed Sheeran",
         categoria: "Pop",
-        capaUrl: "https://i.scdn.co/image/ab67616d0000b273ba5db46f4b838ef6027e6f96",
-        audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3"
+        capaUrl: "https://upload.wikimedia.org/wikipedia/en/b/b4/Shape_Of_You_%28Official_Single_Cover%29_by_Ed_Sheeran.png",
+        audioUrl: "https://dl.dropboxusercontent.com/scl/fi/zkjp8gqz2c3zae1i5c0qk/shape-of-you-sample.mp3?rlkey=v40wprb2xpbgvqktih6437hxw"
     },
     {
         id: 8,
         titulo: "10,000 Reasons",
         artista: "Matt Redman",
         categoria: "Louvor",
-        capaUrl: "https://i.scdn.co/image/ab67616d0000b273af3d8c4ea2c9b5d1681ae0e5",
-        audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3"
+        capaUrl: "https://upload.wikimedia.org/wikipedia/en/3/3a/10%2C000_Reasons_%28Bless_the_Lord%29_-_Matt_Redman.jpg",
+        audioUrl: "https://dl.dropboxusercontent.com/scl/fi/lv7hj4wgw3rzd73ctjbfe/10000-reasons.mp3?rlkey=v40wprb2xpbgvqktih6437hxw"
     }
 ];
 
