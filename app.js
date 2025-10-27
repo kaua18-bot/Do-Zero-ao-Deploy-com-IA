@@ -11,7 +11,7 @@ const musicas = [
         artista: "Chris Tomlin",
         categoria: "Louvor",
         capaUrl: "https://images.pexels.com/photos/415687/pexels-photo-415687.jpeg?auto=compress&cs=tinysrgb&w=400",
-        audioUrl: "https://actions.google.com/sounds/v1/alarms/digital_watch_alarm_long.ogg"
+        audioUrl: "https://www2.cs.uic.edu/~i101/SoundFiles/ImperialMarch60.wav"
     },
     {
         id: 2,
@@ -19,7 +19,7 @@ const musicas = [
         artista: "Chris Tomlin",
         categoria: "Louvor",
         capaUrl: "https://images.pexels.com/photos/2422497/pexels-photo-2422497.jpeg?auto=compress&cs=tinysrgb&w=400",
-        audioUrl: "https://actions.google.com/sounds/v1/alarms/beep_short.ogg"
+        audioUrl: "https://www2.cs.uic.edu/~i101/SoundFiles/CantinaBand60.wav"
     },
     {
         id: 3,
@@ -27,7 +27,7 @@ const musicas = [
         artista: "Hillsong UNITED",
         categoria: "Louvor",
         capaUrl: "https://images.pexels.com/photos/1295138/pexels-photo-1295138.jpeg?auto=compress&cs=tinysrgb&w=400",
-        audioUrl: "https://actions.google.com/sounds/v1/alarms/mechanical_clock_ring.ogg"
+        audioUrl: "https://www2.cs.uic.edu/~i101/SoundFiles/PinkPanther30.wav"
     },
     {
         id: 4,
@@ -35,7 +35,7 @@ const musicas = [
         artista: "Hillsong Worship",
         categoria: "Louvor",
         capaUrl: "https://images.pexels.com/photos/1761279/pexels-photo-1761279.jpeg?auto=compress&cs=tinysrgb&w=400",
-        audioUrl: "https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg"
+        audioUrl: "https://www2.cs.uic.edu/~i101/SoundFiles/StarWars60.wav"
     },
     {
         id: 5,
@@ -43,7 +43,7 @@ const musicas = [
         artista: "Sinach",
         categoria: "Louvor",
         capaUrl: "https://images.pexels.com/photos/33041/antelope-canyon-lower-canyon-arizona.jpg?auto=compress&cs=tinysrgb&w=400",
-        audioUrl: "https://actions.google.com/sounds/v1/cartoon/cartoon_boing.ogg"
+        audioUrl: "https://www2.cs.uic.edu/~i101/SoundFiles/BabyElephantWalk60.wav"
     },
     {
         id: 6,
@@ -51,7 +51,7 @@ const musicas = [
         artista: "Queen",
         categoria: "Rock",
         capaUrl: "https://images.pexels.com/photos/167491/pexels-photo-167491.jpeg?auto=compress&cs=tinysrgb&w=400",
-        audioUrl: "https://actions.google.com/sounds/v1/cartoon/cartoon_cowbell.ogg"
+        audioUrl: "https://www2.cs.uic.edu/~i101/SoundFiles/gettysburg10.wav"
     },
     {
         id: 7,
@@ -59,7 +59,7 @@ const musicas = [
         artista: "Ed Sheeran",
         categoria: "Pop",
         capaUrl: "https://images.pexels.com/photos/1644616/pexels-photo-1644616.jpeg?auto=compress&cs=tinysrgb&w=400",
-        audioUrl: "https://actions.google.com/sounds/v1/cartoon/slide_whistle_1.ogg"
+        audioUrl: "https://www2.cs.uic.edu/~i101/SoundFiles/LayCrips.wav"
     },
     {
         id: 8,
@@ -67,7 +67,7 @@ const musicas = [
         artista: "Matt Redman",
         categoria: "Louvor",
         capaUrl: "https://images.pexels.com/photos/1834407/pexels-photo-1834407.jpeg?auto=compress&cs=tinysrgb&w=400",
-        audioUrl: "https://actions.google.com/sounds/v1/cartoon/tympani_bing.ogg"
+        audioUrl: "https://www2.cs.uic.edu/~i101/SoundFiles/preamble10.wav"
     }
 ];
 
@@ -107,8 +107,14 @@ function mostrarTodasMusicas() {
 // Funções de controle de áudio
 function tocarMusica(id) {
     const musica = musicas.find(m => m.id === id);
-    const audio = document.querySelector(`audio[data-id="${id}"]`) || new Audio(musica.audioUrl);
-    audio.dataset.id = id;
+    let audio = document.querySelector(`audio[data-id="${id}"]`);
+    
+    if (!audio) {
+        audio = new Audio();
+        audio.src = musica.audioUrl;
+        audio.dataset.id = id;
+        document.body.appendChild(audio);
+    }
     
     if (audioAtual && audioAtual !== audio) {
         audioAtual.pause();
@@ -116,7 +122,10 @@ function tocarMusica(id) {
     }
     
     if (audio.paused) {
-        audio.play();
+        audio.play().catch(error => {
+            console.error('Erro ao tocar áudio:', error);
+            alert('Não foi possível reproduzir o áudio. Por favor, tente novamente.');
+        });
         audioAtual = audio;
     } else {
         audio.pause();
@@ -243,7 +252,6 @@ function renderizarMusicas() {
                 <button class="stop-button" onclick="pararMusica(${musica.id})">⏹</button>
                 <button class="add-to-playlist" onclick="showAddToPlaylistModal(${musica.id})">+</button>
             </div>
-            <audio data-id="${musica.id}"></audio>
         `;
         
         container.appendChild(musicaElement);
