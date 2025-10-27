@@ -54,9 +54,15 @@
             <input type="text" 
                    id="playlist-name" 
                    placeholder="Nome da playlist">
+            <div class="music-selection">
+                <h3>Selecione as músicas:</h3>
+                <div id="music-selection-list" class="music-selection-grid">
+                    <!-- Lista de músicas será inserida aqui -->
+                </div>
+            </div>
             <div class="modal-buttons">
                 <button onclick="hideCreatePlaylistModal()" class="btn-secondary">Cancelar</button>
-                <button onclick="createPlaylist()" class="btn-primary">Criar</button>
+                <button onclick="createPlaylistWithSongs()" class="btn-primary">Criar Playlist</button>
             </div>
         </div>
     </div>

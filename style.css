@@ -1,13 +1,13 @@
 /* Reset e variáveis */
 :root {
-    --primary: #1db954;
-    --primary-hover: #1ed760;
-    --background: #121212;
-    --sidebar: #000000;
-    --card: #181818;
-    --text: #ffffff;
+    --primary: #4a90e2;
+    --primary-hover: #357abd;
+    --background: #1a1a2e;
+    --sidebar: #16213e;
+    --card: #0f3460;
+    --text: #e9e9e9;
     --text-secondary: #b3b3b3;
-    --border: #282828;
+    --border: #533483;
 }
 
 * {
@@ -200,7 +200,7 @@ body {
     background-color: var(--primary-hover);
 }
 
-/* Modais */
+/* Modal */
 .modal {
     display: none;
     position: fixed;
@@ -210,6 +210,55 @@ body {
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.8);
     z-index: 1000;
+}
+
+.music-selection {
+    margin: 20px 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.music-selection h3 {
+    margin-bottom: 15px;
+    color: var(--text);
+}
+
+.music-selection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.music-selection-item {
+    background-color: var(--card);
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.music-selection-item.selected {
+    border-color: var(--primary);
+    background-color: rgba(74, 144, 226, 0.2);
+}
+
+.music-selection-item img {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.music-selection-item .title {
+    font-size: 14px;
+    color: var(--text);
+    margin-bottom: 4px;
+}
+
+.music-selection-item .artist {
+    font-size: 12px;
+    color: var(--text-secondary);
 }
 
 .modal-content {

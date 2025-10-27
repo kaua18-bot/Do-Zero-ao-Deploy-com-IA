@@ -136,26 +136,63 @@ function pararMusica(id) {
 
 // Funções de playlist
 function showCreatePlaylistModal() {
-    document.getElementById('create-playlist-modal').style.display = 'block';
+    const modal = document.getElementById('create-playlist-modal');
+    const selectionList = document.getElementById('music-selection-list');
+    
+    // Limpar seleções anteriores
+    selectionList.innerHTML = '';
+    
+    // Adicionar todas as músicas disponíveis
+    musicas.forEach(musica => {
+        const musicaElement = document.createElement('div');
+        musicaElement.className = 'music-selection-item';
+        musicaElement.dataset.id = musica.id;
+        
+        musicaElement.innerHTML = `
+            <img src="${musica.capaUrl}" alt="${musica.titulo}">
+            <div class="title">${musica.titulo}</div>
+            <div class="artist">${musica.artista}</div>
+        `;
+        
+        musicaElement.onclick = () => {
+            musicaElement.classList.toggle('selected');
+        };
+        
+        selectionList.appendChild(musicaElement);
+    });
+    
+    modal.style.display = 'block';
 }
 
 function hideCreatePlaylistModal() {
     document.getElementById('create-playlist-modal').style.display = 'none';
+    document.getElementById('playlist-name').value = '';
 }
 
-function createPlaylist() {
+function createPlaylistWithSongs() {
     const name = document.getElementById('playlist-name').value;
-    if (name) {
-        const newPlaylist = {
-            id: playlists.length + 1,
-            name: name,
-            musicas: []
-        };
-        playlists.push(newPlaylist);
-        renderizarPlaylists();
-        hideCreatePlaylistModal();
-        document.getElementById('playlist-name').value = '';
+    if (!name) {
+        alert('Por favor, dê um nome para a playlist');
+        return;
     }
+    
+    const selectedSongs = Array.from(document.getElementsByClassName('music-selection-item selected'))
+        .map(el => parseInt(el.dataset.id));
+    
+    if (selectedSongs.length === 0) {
+        alert('Por favor, selecione pelo menos uma música');
+        return;
+    }
+    
+    const newPlaylist = {
+        id: playlists.length + 1,
+        name: name,
+        musicas: selectedSongs
+    };
+    
+    playlists.push(newPlaylist);
+    renderizarPlaylists();
+    hideCreatePlaylistModal();
 }
 
 function showAddToPlaylistModal(musicaId) {
